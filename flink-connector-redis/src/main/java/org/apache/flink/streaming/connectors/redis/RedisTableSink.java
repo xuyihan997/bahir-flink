@@ -92,9 +92,7 @@ public class RedisTableSink implements UpsertStreamTableSink<Row> {
         return properties;
     }
 
-    public void setProperties(Map<String, String> properties) {
-        this.properties = properties;
-    }
+    public void setProperties(Map<String, String> properties) { this.properties = properties; }
 
     @Override
     public void setKeyFields(String[] keys) {

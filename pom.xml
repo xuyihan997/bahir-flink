@@ -555,6 +555,7 @@
           </execution>
           <execution>
             <id>copy-module-dependencies</id>
+            <!--suppress UnresolvedMavenProperty -->
             <phase>${build.copyDependenciesPhase}</phase>
             <goals>
               <goal>copy-dependencies</goal>
@@ -645,6 +646,7 @@
         <executions>
           <execution>
             <id>prepare-test-jar</id>
+            <!--suppress UnresolvedMavenProperty -->
             <phase>${build.testJarPhase}</phase>
             <goals>
               <goal>test-jar</goal>
