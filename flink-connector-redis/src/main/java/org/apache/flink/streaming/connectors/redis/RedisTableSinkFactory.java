@@ -17,13 +17,7 @@
 
 package org.apache.flink.streaming.connectors.redis;
 
-import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.REDIS;
-import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.REDIS_COMMAND;
-import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.REDIS_KEY_TTL;
-import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.REDIS_MASTER_NAME;
-import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.REDIS_MODE;
-import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.REDIS_NODES;
-import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.REDIS_SENTINEL;
+import static org.apache.flink.streaming.connectors.redis.descriptor.RedisValidator.*;
 import static org.apache.flink.table.descriptors.ConnectorDescriptorValidator.CONNECTOR;
 import static org.apache.flink.table.descriptors.ConnectorDescriptorValidator.CONNECTOR_TYPE;
 import static org.apache.flink.table.descriptors.FormatDescriptorValidator.FORMAT;
@@ -31,6 +25,7 @@ import static org.apache.flink.table.descriptors.Schema.SCHEMA;
 import static org.apache.flink.table.descriptors.Schema.SCHEMA_FROM;
 import static org.apache.flink.table.descriptors.Schema.SCHEMA_NAME;
 import static org.apache.flink.table.descriptors.Schema.SCHEMA_TYPE;
+import static org.apache.flink.table.descriptors.Schema.SCHEMA_DATA_TYPE;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,7 +63,12 @@ public class RedisTableSinkFactory implements StreamTableSinkFactory<Tuple2<Bool
         properties.add(REDIS_MASTER_NAME);
         properties.add(REDIS_SENTINEL);
         properties.add(REDIS_KEY_TTL);
+        properties.add(REDIS_SINGLE);
+        properties.add(REDIS_HOST_IP);
+        properties.add(REDIS_PORT);
+
         // schema
+        properties.add(SCHEMA + ".#." + SCHEMA_DATA_TYPE);
         properties.add(SCHEMA + ".#." + SCHEMA_TYPE);
         properties.add(SCHEMA + ".#." + SCHEMA_NAME);
         properties.add(SCHEMA + ".#." + SCHEMA_FROM);

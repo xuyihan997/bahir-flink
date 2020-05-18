@@ -25,6 +25,9 @@ public class RedisValidator {
     public static final String REDIS = "redis";
     public static final String REDIS_MODE = "redis-mode";
     public static final String REDIS_NODES = "cluster-nodes";
+    public static final String REDIS_SINGLE= "single";
+    public static final String REDIS_HOST_IP= "host.ip";
+    public static final String REDIS_PORT= "port";
     public static final String REDIS_CLUSTER = "cluster";
     public static final String REDIS_SENTINEL = "sentinel";
     public static final String REDIS_COMMAND = "command";
